@@ -4,4 +4,6 @@ The code in this repository is a full solution to the application question for t
 
 The question asked to parse play by play data for 50 NBA games and calculate the Plus-Minus for every player that played in the game. Additional data files included the starting lineups for each team and a key for event codes (1 = Made Basket, 4 = Rebound, etc.). The full prompt is in the included PDF file.
 
-The final script is stored in plus_minus.py and the iPython notebook includes my scratch notes, a few tests, and a bunch of print statements I used for debugging (some errors in this notebook were never fixed). The final result is stored in Indiana PaVers.csv. Shoutout to the r/pavers community during the 2018 playoffs.
+Interestingly enough, there is a quirk in the data that is never mentioned in the prompt. For free throws (Event Code = 3), the Option1 data field signals whether the shot was made or missed. In the prompt, Option1 is specified to be "the point value of any attempted shot". This completely ignores its utility in judging free throw accuracy. This conclusion was made by observing that all free throws with an Option1 value of 2 were followed by a rebound. This is only possible on misses.
+
+The final script is stored in plus_minus.py and the iPython notebook includes my scratch notes, a few tests, and a bunch of print statements I used for debugging (some errors in this notebook were never fixed). The final result is stored in Indiana PaVers.csv.
